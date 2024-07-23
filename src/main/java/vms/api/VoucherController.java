@@ -16,7 +16,7 @@ public class VoucherController {
     }
 
     @GetMapping
-    public Collection<Voucher> getAllVouchers() {
+    Collection<Voucher> getAllVouchers() {
         return List.of(
                 new Voucher(UUID.randomUUID(), "GE", 15),
                 new Voucher(UUID.randomUUID(), "ABC Nova", 8),
