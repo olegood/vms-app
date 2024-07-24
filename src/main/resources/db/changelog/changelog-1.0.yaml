@@ -1,0 +1,33 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: Oleg Anastassov
+      preConditions:
+        - onFail: MARK_RAN
+          not:
+            tableExists:
+              tableName: voucher
+      rollback:
+        - delete:
+            tableName: voucher
+      changes:
+        - createTable:
+            tableName: voucher
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: organization
+                  type: varchar(250)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: count
+                  type: number
+                  constraints:
+                    nullable: false

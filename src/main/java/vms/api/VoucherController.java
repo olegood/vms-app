@@ -1,27 +1,22 @@
 package vms.api;
 
+import java.util.Collection;
+import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import vms.domain.Voucher;
+import vms.repo.VoucherRepository;
 
-import java.util.Collection;
-import java.util.List;
-import java.util.UUID;
-
+@AllArgsConstructor
 @RestController
 @RequestMapping("/api/voucher")
 public class VoucherController {
 
-    record Voucher(UUID id, String organization, int count) {
-    }
+  private final VoucherRepository voucherRepository;
 
-    @GetMapping
-    Collection<Voucher> getAllVouchers() {
-        return List.of(
-                new Voucher(UUID.randomUUID(), "GE", 15),
-                new Voucher(UUID.randomUUID(), "ABC Nova", 8),
-                new Voucher(UUID.randomUUID(), "Sewerth", 4)
-        );
-    }
-
+  @GetMapping
+  Collection<Voucher> getAllVouchers() {
+    return voucherRepository.findAll();
+  }
 }
