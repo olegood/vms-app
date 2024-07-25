@@ -7,7 +7,7 @@ databaseChangeLog:
             tableName: voucher
             columns:
               - column:
-                  name: id
+                  name: voucher_id
                   type: BIGINT
                   autoIncrement: true
                   constraints:

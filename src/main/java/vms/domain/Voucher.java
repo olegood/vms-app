@@ -18,7 +18,7 @@ public class Voucher implements Serializable {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name = "id", nullable = false)
+  @Column(name = "voucher_id", nullable = false)
   private Long id;
 
   @Column(name = "organization", nullable = false)
