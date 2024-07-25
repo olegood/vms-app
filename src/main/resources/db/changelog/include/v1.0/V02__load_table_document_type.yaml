@@ -1,0 +1,10 @@
+databaseChangeLog:
+  - changeSet:
+      id: 5ca3b1de-5052-43a0-a7ab-b59b0da4fd24
+      author: Oleg Anastassov
+      labels: data
+      changes:
+        - loadData:
+            tableName: document_type
+            file: data/document_type.csv
+            relativeToChangelogFile: true

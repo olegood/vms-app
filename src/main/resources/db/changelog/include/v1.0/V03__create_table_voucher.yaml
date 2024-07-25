@@ -1,15 +1,7 @@
 databaseChangeLog:
   - changeSet:
-      id: 1
+      id: 49a1fdc4-75e9-423c-b8e0-24280055672f
       author: Oleg Anastassov
-      preConditions:
-        - onFail: MARK_RAN
-          not:
-            tableExists:
-              tableName: voucher
-      rollback:
-        - delete:
-            tableName: voucher
       changes:
         - createTable:
             tableName: voucher
@@ -23,7 +15,7 @@ databaseChangeLog:
                     nullable: false
               - column:
                   name: organization
-                  type: varchar(250)
+                  type: varchar
                   constraints:
                     nullable: false
               - column:
@@ -31,3 +23,6 @@ databaseChangeLog:
                   type: number
                   constraints:
                     nullable: false
+      rollback:
+        - delete:
+            tableName: voucher
