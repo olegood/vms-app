@@ -1,0 +1,43 @@
+databaseChangeLog:
+  - changeSet:
+      id: 37ca7eff-db36-446e-84e2-9527499dccc4
+      author: Oleg Anastassov
+      changes:
+        - createTable:
+            tableName: identity_document
+            columns:
+              - column:
+                  name: identity_document_id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: identity_type_id
+                  type: uuid
+                  constraints:
+                    nullable: false
+              - column:
+                  name: serial
+                  type: varchar
+                  constraints:
+                    nullable: false
+      rollback:
+        - delete:
+            tableName: identity_document
+  - changeSet:
+      id: c16006e6-f208-4228-af4a-b7f5a59fd474
+      author: Oleg Anastassov
+      changes:
+        - addForeignKeyConstraint:
+            baseTableName: identity_document
+            baseColumnNames: identity_type_id
+            constraintName: fk_identity_type
+            deferrable: true
+            initiallyDeferred: true
+            onDelete: CASCADE
+            onUpdate: RESTRICT
+            referencedColumnNames: identity_type_id
+            referencedTableName: identity_type
+            validate: true

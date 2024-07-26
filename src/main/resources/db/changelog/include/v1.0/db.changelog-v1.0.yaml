@@ -6,5 +6,5 @@ databaseChangeLog:
       file: V02__load_table_identity_type.yaml
       relativeToChangelogFile: true
   - include:
-      file: V03__create_table_voucher.yaml
+      file: V03__create_table_identity_document.yaml
       relativeToChangelogFile: true
