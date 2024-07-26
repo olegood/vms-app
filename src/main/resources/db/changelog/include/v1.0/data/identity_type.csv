@@ -1,4 +1,4 @@
-DOCUMENT_TYPE_ID,PUBLIC_REF,LABEL,DESCRIPTION
+IDENTITY_TYPE_ID,PUBLIC_REF,LABEL,DESCRIPTION
 4047c00a-3090-4a04-838e-7b16ef2fc8e4,BIRTHCERT,Birth Certificate,This is the description fro birth certificate.
 5079d551-0eba-40fe-97f1-16e6848f4e42,NATIONALID,National Identity Card,Domestic ID card. Internal use only.
 7c585cbb-02d8-4c51-9011-6a9d8aa9ae2f,INTPASSPORT,Internal Passport,

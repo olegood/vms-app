@@ -5,6 +5,6 @@ databaseChangeLog:
       labels: data
       changes:
         - loadData:
-            tableName: document_type
-            file: data/document_type.csv
+            tableName: identity_type
+            file: data/identity_type.csv
             relativeToChangelogFile: true

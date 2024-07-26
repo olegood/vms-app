@@ -1,9 +1,9 @@
 databaseChangeLog:
   - include:
-      file: V01__create_table_document_type.yaml
+      file: V01__create_table_identity_type.yaml
       relativeToChangelogFile: true
   - include:
-      file: V02__load_table_document_type.yaml
+      file: V02__load_table_identity_type.yaml
       relativeToChangelogFile: true
   - include:
       file: V03__create_table_voucher.yaml

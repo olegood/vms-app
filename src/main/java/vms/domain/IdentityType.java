@@ -16,12 +16,12 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @Entity
-@Table(name = "document_type")
-public class DocumentType implements Serializable {
+@Table(name = "identity_type")
+public class IdentityType implements Serializable {
 
   @Id
   @GeneratedValue
-  @Column(name = "document_type_id", nullable = false)
+  @Column(name = "identity_type_id", nullable = false)
   private UUID id;
 
   @JsonProperty("public_ref")

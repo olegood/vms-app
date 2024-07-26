@@ -5,10 +5,10 @@ databaseChangeLog:
       author: Oleg Anastassov
       changes:
         - createTable:
-            tableName: document_type
+            tableName: identity_type
             columns:
               - column:
-                  name: document_type_id
+                  name: identity_type_id
                   type: uuid
                   constraints:
                     primaryKey: true
@@ -27,4 +27,4 @@ databaseChangeLog:
                   type: varchar
       rollback:
         - delete:
-            tableName: document_type
+            tableName: identity_type
