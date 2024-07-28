@@ -1,18 +1,16 @@
 databaseChangeLog:
   - changeSet:
       id: 1d2416f0-a45d-4a08-a529-f78d6f993c81
-      context: prod
       author: Oleg Anastassov
       changes:
         - createTable:
             tableName: identity_type
             columns:
               - column:
-                  name: identity_type_id
-                  type: uuid
+                  name: id
+                  type: serial
                   constraints:
                     primaryKey: true
-                    nullable: false
               - column:
                   name: public_ref
                   type: varchar(15)
@@ -22,9 +20,3 @@ databaseChangeLog:
               - column:
                   name: label
                   type: varchar
-              - column:
-                  name: description
-                  type: varchar
-      rollback:
-        - delete:
-            tableName: identity_type

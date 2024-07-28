@@ -7,25 +7,20 @@ databaseChangeLog:
             tableName: identity_document
             columns:
               - column:
-                  name: identity_document_id
-                  type: bigint
-                  autoIncrement: true
+                  name: id
+                  type: serial
                   constraints:
                     primaryKey: true
-                    nullable: false
               - column:
                   name: identity_type_id
-                  type: uuid
+                  type: integer
                   constraints:
                     nullable: false
               - column:
-                  name: serial
+                  name: serial_number
                   type: varchar
                   constraints:
                     nullable: false
-      rollback:
-        - delete:
-            tableName: identity_document
   - changeSet:
       id: c16006e6-f208-4228-af4a-b7f5a59fd474
       author: Oleg Anastassov
@@ -36,8 +31,7 @@ databaseChangeLog:
             constraintName: fk_identity_type
             deferrable: true
             initiallyDeferred: true
-            onDelete: CASCADE
             onUpdate: RESTRICT
-            referencedColumnNames: identity_type_id
             referencedTableName: identity_type
+            referencedColumnNames: id
             validate: true

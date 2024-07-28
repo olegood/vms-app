@@ -9,7 +9,6 @@ databaseChangeLog:
               - column:
                   name: voucher_id
                   type: BIGINT
-                  autoIncrement: true
                   constraints:
                     primaryKey: true
                     nullable: false
