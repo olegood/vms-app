@@ -3,11 +3,10 @@ spring:
     banner-mode: off
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/vms
-    username: root
-    password: root
+    url: ${VMS_DATASOURCE_URL}
+    username: ${VMS_DATASOURCE_USERNAME}
+    password: ${VMS_DATASOURCE_PASSWORD}
   jpa:
-    show-sql: false
     hibernate:
       ddl-auto: none
   liquibase:
