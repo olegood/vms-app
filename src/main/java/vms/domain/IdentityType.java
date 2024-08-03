@@ -20,10 +20,12 @@ import lombok.Setter;
 @Table(name = "identity_type")
 public class IdentityType {
 
-  @Id @GeneratedValue private Long id;
+    @Id
+    @GeneratedValue
+    private Long id;
 
-  @JsonProperty("public_ref")
-  private String publicRef;
+    @JsonProperty("public_ref")
+    private String publicRef;
 
-  private String label;
+    private String label;
 }

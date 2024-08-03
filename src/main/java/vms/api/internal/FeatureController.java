@@ -16,20 +16,21 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/internal/feature-control")
 public class FeatureController {
 
-  private final Collection<String> features;
+    private final Collection<String> features;
 
-  FeatureController(Environment environment) {
-    var values = environment.getProperty("FEATURE_CONTROL", "").split(",");
-    features = Stream.of(values).map(String::trim).filter(not(String::isBlank)).collect(toSet());
-  }
+    FeatureController(Environment environment) {
+        var values = environment.getProperty("FEATURE_CONTROL", "").split(",");
+        features =
+                Stream.of(values).map(String::trim).filter(not(String::isBlank)).collect(toSet());
+    }
 
-  @GetMapping
-  Collection<String> getAll() {
-    return features;
-  }
+    @GetMapping
+    Collection<String> getAll() {
+        return features;
+    }
 
-  @GetMapping("/{name}")
-  Map<String, Boolean> getFeature(@PathVariable String name) {
-    return Map.of(name, features.contains(name));
-  }
+    @GetMapping("/{name}")
+    Map<String, Boolean> getFeature(@PathVariable String name) {
+        return Map.of(name, features.contains(name));
+    }
 }

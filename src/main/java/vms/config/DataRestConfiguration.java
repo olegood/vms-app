@@ -10,9 +10,8 @@ import vms.domain.IdentityType;
 @Configuration
 public class DataRestConfiguration implements RepositoryRestConfigurer {
 
-  @Override
-  public void configureRepositoryRestConfiguration(
-      RepositoryRestConfiguration config, CorsRegistry cors) {
-    config.exposeIdsFor(IdentityType.class, IdentityDocument.class);
-  }
+    @Override
+    public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config, CorsRegistry cors) {
+        config.exposeIdsFor(IdentityType.class, IdentityDocument.class);
+    }
 }

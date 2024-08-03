@@ -20,9 +20,12 @@ import lombok.Setter;
 @Table(name = "identity_document")
 public class IdentityDocument {
 
-  @Id @GeneratedValue private Long id;
+    @Id
+    @GeneratedValue
+    private Long id;
 
-  @ManyToOne private IdentityType identityType;
+    @ManyToOne
+    private IdentityType identityType;
 
-  private String serialNumber;
+    private String serialNumber;
 }
