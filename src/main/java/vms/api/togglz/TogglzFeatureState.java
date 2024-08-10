@@ -1,6 +1,5 @@
 package vms.api.togglz;
 
-import jakarta.annotation.PostConstruct;
 import java.util.List;
 import lombok.AllArgsConstructor;
 import org.springframework.core.env.Environment;
@@ -12,12 +11,13 @@ import org.togglz.core.repository.FeatureState;
 
 @AllArgsConstructor
 @Component
+@Deprecated
 public class TogglzFeatureState {
 
     private final Environment environment;
     private final FeatureManager featureManager;
 
-    @PostConstruct
+    // @PostConstruct
     void postConstruct() {
         featureManager.getFeatures().stream()
                 .map(featureManager::getFeatureState)

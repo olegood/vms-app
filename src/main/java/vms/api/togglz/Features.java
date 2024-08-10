@@ -52,5 +52,8 @@ public enum Features implements Feature {
                         name = SpringEnvironmentPropertyActivationStrategy.PARAM_PROPERTY_VALUE,
                         value = "true")
             })
-    BEST_IMPL_EARLY_PREVIEW
+    BEST_IMPL_EARLY_PREVIEW,
+
+    DAY_X,
+    CUSTOM_FEATURE
 }
