@@ -1,4 +1,4 @@
-package vms.api.togglz;
+package vms.api.togglz.features;
 
 import org.togglz.core.Feature;
 import org.togglz.core.activation.UserRoleActivationStrategy;
@@ -6,9 +6,11 @@ import org.togglz.core.activation.UsernameActivationStrategy;
 import org.togglz.core.annotation.ActivationParameter;
 import org.togglz.core.annotation.DefaultActivationStrategy;
 import org.togglz.core.annotation.EnabledByDefault;
+import org.togglz.core.annotation.FeatureGroup;
 import org.togglz.spring.activation.SpringEnvironmentPropertyActivationStrategy;
 
-public enum Features implements Feature {
+@FeatureGroup("feature")
+public enum Toggle implements Feature {
     @EnabledByDefault
     @DefaultActivationStrategy(
             id = SpringEnvironmentPropertyActivationStrategy.ID,

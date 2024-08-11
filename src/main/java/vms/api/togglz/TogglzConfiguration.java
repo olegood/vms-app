@@ -12,6 +12,9 @@ import org.togglz.core.repository.jdbc.JDBCStateRepository;
 import org.togglz.core.spi.FeatureProvider;
 import org.togglz.core.user.SimpleFeatureUser;
 import org.togglz.core.user.UserProvider;
+import vms.api.togglz.features.Experimental;
+import vms.api.togglz.features.Module;
+import vms.api.togglz.features.Toggle;
 
 @Configuration
 public class TogglzConfiguration {
@@ -22,12 +25,12 @@ public class TogglzConfiguration {
     }
 
     @Bean
-    public FeatureProvider featureProvider() {
-        return new EnumBasedFeatureProvider(Features.class);
+    FeatureProvider featureProvider() {
+        return new EnumBasedFeatureProvider(Module.class, Toggle.class, Experimental.class);
     }
 
     @Bean
-    public UserProvider userProvider() {
+    UserProvider userProvider() {
         return () -> new SimpleFeatureUser("vova").setAttribute(USER_ATTRIBUTE_ROLES, Set.of("manager", "clerk"));
     }
 }
