@@ -4,7 +4,7 @@ import org.togglz.core.Feature;
 import org.togglz.core.annotation.FeatureGroup;
 
 @FeatureGroup("module")
-public enum Module implements Feature {
+public enum Core implements Feature {
     SIMULATE_USER,
 
     @FeatureGroup("integration")

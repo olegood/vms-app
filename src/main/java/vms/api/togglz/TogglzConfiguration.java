@@ -12,9 +12,9 @@ import org.togglz.core.repository.jdbc.JDBCStateRepository;
 import org.togglz.core.spi.FeatureProvider;
 import org.togglz.core.user.SimpleFeatureUser;
 import org.togglz.core.user.UserProvider;
-import vms.api.togglz.features.Experimental;
-import vms.api.togglz.features.Module;
-import vms.api.togglz.features.Toggle;
+import vms.api.togglz.features.Core;
+import vms.api.togglz.features.Probe;
+import vms.api.togglz.features.Togglz;
 
 @Configuration
 public class TogglzConfiguration {
@@ -26,7 +26,7 @@ public class TogglzConfiguration {
 
     @Bean
     FeatureProvider featureProvider() {
-        return new EnumBasedFeatureProvider(Module.class, Toggle.class, Experimental.class);
+        return new EnumBasedFeatureProvider(Core.class, Togglz.class, Probe.class);
     }
 
     @Bean

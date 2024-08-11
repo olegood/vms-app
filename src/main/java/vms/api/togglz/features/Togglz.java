@@ -10,7 +10,7 @@ import org.togglz.core.annotation.FeatureGroup;
 import org.togglz.spring.activation.SpringEnvironmentPropertyActivationStrategy;
 
 @FeatureGroup("feature")
-public enum Toggle implements Feature {
+public enum Togglz implements Feature {
     @EnabledByDefault
     @DefaultActivationStrategy(
             id = SpringEnvironmentPropertyActivationStrategy.ID,
